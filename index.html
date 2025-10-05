@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Generador de QR</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formulario">
+            <h2>Añade contenido al codigo QR - texto o URL </h2>
+            <div class="campo">
+                <label for="nombre"> Nombre del codigo del QR</label>
+                <input type="text" id="nombre" placeholder="Ej. pagina web">
+            </div>
+
+            <div class="campo">
+                <label for=""> URL</label>
+                <input type="text" id="texto" placeholder="Ej. google.com">
+            </div>
+
+            <div class="campo">
+                <label >Color del codigo QR</label>
+                <div class="colores">
+                    <label class="color-option" style="background-color: #000000;">
+                    <input type="radio" name="color" value="#000000" checked>
+                    </label>
+
+                    <label class="color-option" style="background-color: #4168e1;">
+                        <input type="radio" name="color" value="#4168e1">
+                    </label>
+
+                    <label class="color-option" style="background-color: #888888;">
+                    <input type="radio" name="color" value="#888888">
+                    </label>
+                    
+                </div>
+            </div>
+
+            <button class="btn" id="btn-generar" onclick="generarQR()" disabled>Generar Codigo QR</button>
+            <button class="btn"id="btn-descargar" onclick="descargarQR()" disabled>Descargar QR</button>
+            <button class="btn" onclick="reiniciarFormulario()">Crear otro</button>
+            
+        </div>
+
+        <div class="preview">
+            <div class="phone-frame">
+                <div class="qr-container">
+                    <canvas id="qrcode"></canvas>
+                    <p>SCAN ME</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
